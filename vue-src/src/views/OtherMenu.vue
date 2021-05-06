@@ -10,13 +10,11 @@
         </v-row>
         <v-divider></v-divider>
 <!-- end メニュータイトル -->
-<v-progress-linear
-    :active="progress"
-    :indeterminate="progress"
-    color="cyan"
-></v-progress-linear>
-<!-- test -->
-<br>
+    <v-progress-linear
+        :active="progress"
+        :indeterminate="progress"
+        color="cyan"
+    ></v-progress-linear>
     <v-tabs v-model="tab">
         <v-tab v-for="appliance in othersList" :key="appliance.id">
             {{appliance.nickname}}
@@ -29,7 +27,6 @@
             </v-btn>
         </v-tab-item>
     </v-tabs-items>
-<!-- end test -->
     </div>
 </template>
 
