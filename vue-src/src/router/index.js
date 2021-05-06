@@ -1,29 +1,52 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Vue from "vue";
+import VueRouter from "vue-router";
+import Home from "../views/Home.vue";
+import AirMenu from "../views/AirMenu.vue";
+import TvMenu from "../views/TvMenu.vue";
+import OtherMenu from "../views/OtherMenu.vue";
+import SettingMenu from "../views/SettingMenu.vue";
+// 一時的
+import Work from "../views/Work.vue";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: "/",
+    name: "Home",
+    component: Home,
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
-]
+    path: "/air",
+    name: "AirMenu",
+    component: AirMenu,
+  },
+  {
+    path: "/tv",
+    name: "TvMenu",
+    component: TvMenu,
+  },
+  {
+    path: "/other",
+    name: "OtherMenu",
+    component: OtherMenu,
+  },
+  {
+    path: "/setting",
+    name: "SettingMenu",
+    component: SettingMenu,
+  },
+  {
+    path: "/work",
+    name: "Work",
+    component: Work,
+  },
+];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;
