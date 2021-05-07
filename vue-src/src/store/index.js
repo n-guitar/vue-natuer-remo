@@ -6,6 +6,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     token: "",
+    tokenStorageSetSwitch: false,
     baseUrl: "https://api.nature.global/",
     // apiStatus: "",
     appliancesList: [],

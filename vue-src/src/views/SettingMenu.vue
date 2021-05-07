@@ -12,6 +12,7 @@
 <!-- end メニュータイトル -->
 
 <!-- Token セット -->
+
         <v-col cols="8" class="pt-4">
             <div class="text-subtitle-1 text-decoration-underline font-weight-medium" >
                 Token
@@ -31,9 +32,12 @@
                 tokenをsetするとapiが実行されます
             </div>
         </v-col>
+        <v-col v-show="tokenSet" class="py-0">
+            <v-switch v-model="tokenStorageSetSwitch"  label="TokenをBrowserのLocalStorageに保存"></v-switch>
+        </v-col>
 <!-- end Token セット -->
 <!-- device エリア -->
-        <v-col cols="12" class="pt-0">
+        <v-col cols="12" class="pt-2">
             <div class="text-subtitle-1 text-decoration-underline font-weight-medium" >
                 Device
             </div>
@@ -90,6 +94,7 @@ import { mapActions } from 'vuex'
 export default {
     data(){
         return {
+            tokenStorageSetSwitch: false,
             token: "",
             tokenShow: false,
             tokenSet: false,
@@ -103,8 +108,15 @@ export default {
             this.tokenSet = true
             this.appliancesList = this.$store.state.appliancesList["payload"]
             this.device = this.$store.state.device["payload"]
+            this.tokenStorageSetSwitch = this.$store.state.tokenStorageSetSwitch
             console.log("[SettingMenu][created]this.token:",this.token)
-        } else {
+        }
+        else if(localStorage.getItem("token")) {
+            this.tokenStorageSetSwitch = true
+            this.token = localStorage.getItem("token");
+            this.setToken()
+        }
+        else {
             console.log("please set your token")
         }
     },
@@ -158,6 +170,17 @@ export default {
             })
         }
     },
+    watch: {
+        tokenStorageSetSwitch(){
+            if(this.tokenStorageSetSwitch){
+                localStorage.setItem("token", this.token);
+            } else {
+                localStorage.removeItem("token");
+            }
+            this.$store.state.tokenStorageSetSwitch = this.tokenStorageSetSwitch
+            console.log(this.tokenStorageSetSwitch)
+        }
+    }
 }
 </script>
 
