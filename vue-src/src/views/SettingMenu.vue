@@ -12,7 +12,7 @@
 <!-- end メニュータイトル -->
 
 <!-- Token セット -->
-        <v-col cols="12" class="pt-4">
+        <v-col cols="8" class="pt-4">
             <div class="text-subtitle-1 text-decoration-underline font-weight-medium" >
                 Token
             </div>

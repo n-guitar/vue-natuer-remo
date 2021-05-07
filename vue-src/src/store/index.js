@@ -10,6 +10,7 @@ export default new Vuex.Store({
     // apiStatus: "",
     appliancesList: [],
     device: "",
+    airTemp: "",
   },
   mutations: {
     setToken(state, token) {
@@ -35,11 +36,6 @@ export default new Vuex.Store({
     setDeviceAction({ commit }, payload) {
       commit("setDevice", payload);
     },
-
-    // apiが帰ってくるまで同期したいためasyncしない
-    // getAppliancesAction({ commit }) {
-    //   commit("getAppliances");
-    // },
   },
   modules: {},
 });

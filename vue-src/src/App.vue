@@ -4,6 +4,7 @@
       <v-list-item to='/' link>
         <v-list-item-content>
           <v-list-item-title class="title" id="app-title">
+            <v-icon>mdi-vuejs</v-icon>
             Vue Nature Remo
           </v-list-item-title>
         </v-list-item-content>
