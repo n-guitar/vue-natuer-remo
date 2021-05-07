@@ -8,7 +8,7 @@
                 </div>
             </v-col>
         </v-row>
-        <v-divider></v-divider>
+        <v-divider color="success"></v-divider>
 <!-- end メニュータイトル -->
     <v-progress-linear
         :active="progress"

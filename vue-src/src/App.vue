@@ -1,8 +1,8 @@
 <template>
   <v-app v-cloak>
-    <v-navigation-drawer app>
+    <v-navigation-drawer app color="info">
       <v-list-item to='/' link>
-        <v-list-item-content>
+        <v-list-item-content >
           <v-list-item-title class="title" id="app-title">
             <v-icon>mdi-vuejs</v-icon>
             Vue Nature Remo
