@@ -1,6 +1,9 @@
 <template>
   <v-app v-cloak>
-    <v-navigation-drawer app color="info">
+    <v-navigation-drawer
+      app
+      color="info"
+    >
       <v-list-item to='/' link>
         <v-list-item-content >
           <v-list-item-title class="title" id="app-title">
