@@ -1,7 +1,7 @@
 # ビルド環境
 FROM node:lts-alpine as build-stage
 WORKDIR /app
-COPY package*.json ./
+COPY ./vue-src/package*.json ./
 RUN npm install
 COPY ./vue-src .
 RUN npm run build
