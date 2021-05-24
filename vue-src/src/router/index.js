@@ -36,11 +36,6 @@ const routes = [
     name: "SettingMenu",
     component: SettingMenu,
   },
-  {
-    path: "/work",
-    name: "Work",
-    component: Work,
-  },
 ];
 
 const router = new VueRouter({
