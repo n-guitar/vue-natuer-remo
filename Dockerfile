@@ -1,22 +1,13 @@
-FROM node:lts-alpine
-
-# 静的コンテンツを配信するシンプルな http サーバをインストールする
-RUN npm install -g http-server
-
-# カレントワーキングディレクトリとして 'app' フォルダを指定する
+# ビルド環境
+FROM node:lts-alpine as build-stage
 WORKDIR /app
-
-# `package.json` と `package-lock.json` （あれば）を両方コピーする
-COPY ./vue-src/package*.json ./
-
-# プロジェクトの依存ライブラリをインストールする
+COPY package*.json ./
 RUN npm install
-
-# カレントワーキングディレクトリ(つまり 'app' フォルダ)にプロジェクトのファイルやフォルダをコピーする
 COPY ./vue-src .
-
-# 本番向けに圧縮しながらアプリケーションをビルドする
 RUN npm run build
 
-EXPOSE 8080
-CMD [ "http-server", "dist" ]
+# 本番環境
+FROM nginx:stable-alpine as production-stage
+COPY --from=build-stage /app/dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
