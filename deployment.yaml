@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: vue-natuer-remo
+  name: vue-natuer-remo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vue-natuer-remo
+  template:
+    metadata:
+      labels:
+        app: vue-natuer-remo
+    spec:
+      containers:
+      - image: 00000000:latest
+        name: develop
