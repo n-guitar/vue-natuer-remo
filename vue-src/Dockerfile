@@ -13,7 +13,7 @@ COPY package*.json ./
 RUN npm install
 
 # カレントワーキングディレクトリ(つまり 'app' フォルダ)にプロジェクトのファイルやフォルダをコピーする
-COPY ./vue-src .
+COPY ./src .
 
 # 本番向けに圧縮しながらアプリケーションをビルドする
 RUN npm run build
