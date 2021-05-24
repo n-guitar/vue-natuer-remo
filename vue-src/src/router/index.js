@@ -5,8 +5,6 @@ import AirMenu from "../views/AirMenu.vue";
 import TvMenu from "../views/TvMenu.vue";
 import OtherMenu from "../views/OtherMenu.vue";
 import SettingMenu from "../views/SettingMenu.vue";
-// 一時的
-import Work from "../views/Work.vue";
 
 Vue.use(VueRouter);
 
