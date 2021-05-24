@@ -2,7 +2,7 @@ stages:
 - name: build image
   steps:
   - publishImageConfig:
-      dockerfilePath: ./vue-src/Dockerfile
+      dockerfilePath: ./Dockerfile
       buildContext: .
       tag: vue-nature-remo/develop
       registry: http://192.168.68.108:30615
