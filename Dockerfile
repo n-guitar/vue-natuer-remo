@@ -7,13 +7,13 @@ RUN npm install -g http-server
 WORKDIR /app
 
 # `package.json` と `package-lock.json` （あれば）を両方コピーする
-COPY package*.json ./
+COPY ./vue-src/package*.json ./
 
 # プロジェクトの依存ライブラリをインストールする
 RUN npm install
 
 # カレントワーキングディレクトリ(つまり 'app' フォルダ)にプロジェクトのファイルやフォルダをコピーする
-COPY ./src .
+COPY ./vue-src .
 
 # 本番向けに圧縮しながらアプリケーションをビルドする
 RUN npm run build
