@@ -4,8 +4,11 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: vue
-      pushRemote: true
+      tag: vue-natuer-remo:develop
       registry: http://192.168.68.108:30615
+- name: run pod
+  steps:
+  - applyYamlConfig:
+      path: ./deployment.yaml
 timeout: 60
 notification: {}
