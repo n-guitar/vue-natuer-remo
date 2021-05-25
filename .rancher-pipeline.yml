@@ -5,7 +5,8 @@ stages:
       dockerfilePath: ./Dockerfile
       buildContext: .
       tag: vue-natuer-remo:develop
-      registry: http://192.168.68.108:30615
+      pushRemote: true
+      registry: http://docker-registry.docker-registry:5000
 - name: run pod
   steps:
   - applyYamlConfig:
