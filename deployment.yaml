@@ -4,6 +4,7 @@ metadata:
   labels:
     app: vue-natuer-remo
   name: vue-natuer-remo
+  namespace: default
 spec:
   replicas: 1
   selector:
@@ -15,5 +16,5 @@ spec:
         app: vue-natuer-remo
     spec:
       containers:
-      - image: vue-natuer-remo:develop
-        name: develop
+      - image: 192.168.68.108:30615/vue-natuer-remo:develop
+        name: vue-natuer-remo
