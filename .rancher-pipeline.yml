@@ -5,7 +5,8 @@ stages:
       dockerfilePath: ./Dockerfile
       buildContext: .
       tag: vue-natuer-remo:develop
-      registry: 127.0.0.1:34036
+      pushRemote: true
+      registry: http://docker-registry.docker-registry:5000
     env:
       PLUGIN_INSECURE: "true"
 timeout: 60
