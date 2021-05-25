@@ -16,5 +16,5 @@ spec:
         app: vue-natuer-remo
     spec:
       containers:
-      - image: 192.168.68.108:30615/vue-natuer-remo:develop
+      - image: docker-registry.docker-registry:5000/vue-natuer-remo:develop
         name: vue-natuer-remo
