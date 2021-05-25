@@ -12,4 +12,11 @@ stages:
   - applyYamlConfig:
       path: ./deployment.yaml
 timeout: 60
-notification: {}
+notification:
+  recipients:
+  - recipient: '#k3s-nuc'
+    notifier: local:n-8k7lm
+  condition:
+  - Success
+  - Changed
+  - Failed
