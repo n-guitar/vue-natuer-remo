@@ -18,3 +18,5 @@ spec:
       containers:
       - image: docker-registry.docker-registry:5000/vue-natuer-remo:develop
         name: vue-natuer-remo
+      imagePullSecrets:
+      - name: private-registry
