@@ -4,15 +4,11 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: vue-natuer-remo:develop
+      tag: haku-mai/vue-natuer-remo:develop
       pushRemote: true
-      registry: docker-registry.docker-registry:5000
+      registry: harbor-harbor-core.harbor
     env:
       PLUGIN_INSECURE: "true"
-- name: run pod
-  steps:
-  - applyYamlConfig:
-      path: ./deployment.yaml
 timeout: 60
 notification:
   recipients:
