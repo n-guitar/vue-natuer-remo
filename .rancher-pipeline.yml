@@ -6,7 +6,7 @@ stages:
       buildContext: .
       tag: haku-mai/vue-natuer-remo:develop
       pushRemote: true
-      registry: docker-registry.docker-registry:5000
+      registry: docker-registry.default.svc.cluster.local:5000
     env:
       PLUGIN_INSECURE: "true"
 - name: run deployment
