@@ -16,7 +16,7 @@ spec:
         app: vue-natuer-remo
     spec:
       containers:
-      - image: docker-registry.docker-registry:5000/haku-mai/vue-natuer-remo:develop
+      - image: docker-registry.default.svc.cluster.local:5000/haku-mai/vue-natuer-remo:develop
         name: vue-natuer-remo
       imagePullSecrets:
       - name: docker-registry-secret
