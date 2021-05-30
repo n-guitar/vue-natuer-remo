@@ -6,7 +6,7 @@ stages:
       buildContext: .
       tag: haku-mai/vue-natuer-remo:develop
       pushRemote: true
-      registry: harbor-harbor-core.harbor/v2
+      registry: 127.0.0.1:34036
     env:
       PLUGIN_INSECURE: "true"
 timeout: 60
