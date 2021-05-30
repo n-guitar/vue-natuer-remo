@@ -6,13 +6,9 @@ stages:
       buildContext: .
       tag: haku-mai/vue-natuer-remo:develop
       pushRemote: true
-      registry: docker-registry.default.svc.cluster.local:5000
+      registry: core.harbor.k3s.nuc
     env:
       PLUGIN_INSECURE: "true"
-- name: run deployment
-  steps:
-  - applyYamlConfig:
-      path: ./deployment.yaml
 timeout: 60
 notification:
   recipients:
